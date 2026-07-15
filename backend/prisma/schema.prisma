@@ -1,0 +1,105 @@
+datasource db {
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model Excursion {
+  id               String        @id @default(uuid())
+  slug             String        @unique
+  title            String
+  shortDescription String
+  description      String
+  location         String
+  duration         String
+  price            String
+  featuredImage    String
+  galleryImages    String[]      // PostgreSQL string array support
+  included         String[]
+  excluded         String[]
+  itinerary        Json          // Complex day-by-day JSON details
+  meetingPoint     String
+  availableDays    String[]
+  featured         Boolean       @default(false)
+  published        Boolean       @default(false)
+  reservations     Reservation[]
+  createdAt        DateTime      @default(now())
+  updatedAt        DateTime      @updatedAt
+}
+
+enum ReservationStatus {
+  PENDING
+  CONFIRMED
+  CANCELLED
+  COMPLETED
+}
+
+model Reservation {
+  id             String            @id @default(uuid())
+  fullName       String
+  email          String
+  phone          String
+  whatsapp       String?
+  excursionId    String
+  excursion      Excursion         @relation(fields: [excursionId], references: [id], onDelete: Cascade)
+  reservationDate DateTime
+  numberOfGuests Int
+  hotel          String
+  pickupLocation String?
+  specialRequests String?
+  status         ReservationStatus @default(PENDING)
+  createdAt      DateTime          @default(now())
+  updatedAt      DateTime          @updatedAt
+
+  @@index([excursionId])
+  @@index([status])
+}
+
+model ContactMessage {
+  id        String   @id @default(uuid())
+  fullName  String
+  email     String
+  subject   String
+  message   String
+  isRead    Boolean  @default(false)
+  createdAt DateTime @default(now())
+}
+
+model GalleryImage {
+  id        String   @id @default(uuid())
+  title     String
+  category  String
+  image     String
+  featured  Boolean  @default(false)
+  createdAt DateTime @default(now())
+
+  @@index([category])
+  @@index([featured])
+}
+
+model Testimonial {
+  id        String   @id @default(uuid())
+  fullName  String
+  country   String
+  rating    Float
+  comment   String
+  avatar    String?
+  featured  Boolean  @default(false)
+  createdAt DateTime @default(now())
+
+  @@index([featured])
+}
+
+model Admin {
+  id        String   @id @default(uuid())
+  name      String
+  email     String   @unique
+  password  String
+  role      String   @default("editor")
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}

@@ -1,0 +1,59 @@
+@import "tailwindcss";
+
+:root {
+  --background: #FAF7F2;
+  --foreground: #2B2B2B;
+  
+  --primary-green: #3F4E35;
+  --desert-brown: #A66A3D;
+  --sand: #D8C2A5;
+  --cream-bg: #FAF7F2;
+  --dark-txt: #2B2B2B;
+  --light-txt: #6F6F6F;
+  --accent-gold: #E5C98B;
+}
+
+@theme {
+  --color-primary-green: #3F4E35;
+  --color-desert-brown: #A66A3D;
+  --color-sand: #D8C2A5;
+  --color-cream-bg: #FAF7F2;
+  --color-dark-txt: #2B2B2B;
+  --color-light-txt: #6F6F6F;
+  --color-accent-gold: #E5C98B;
+
+  --font-serif: var(--font-cormorant);
+  --font-sans: var(--font-jakarta);
+
+  --radius-card: 20px;
+  --radius-button: 14px;
+  --radius-image: 22px;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-jakarta), sans-serif;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6, .font-serif {
+  font-family: var(--font-cormorant), serif;
+}
+
+/* Custom Scrollbar for premium luxury feel */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #FAF7F2;
+}
+::-webkit-scrollbar-thumb {
+  background: #3F4E35;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #A66A3D;
+}
