@@ -83,7 +83,7 @@ export default function ContactForm() {
                   For the fastest response time regarding availability, custom tours, and last minute reservations.
                 </p>
                 <a
-                  href="https://wa.me/212600000000"
+                  href="https://wa.me/212679675893"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-block w-full text-center py-3 bg-white text-primary-green text-xs font-semibold uppercase tracking-widest rounded-[14px] hover:bg-sand transition-colors focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 outline-none"
@@ -98,8 +98,8 @@ export default function ContactForm() {
                   <HiOutlinePhone className="w-5 h-5 text-desert-brown shrink-0 mt-0.5" />
                   <div>
                     <h4 className="text-[10px] uppercase text-light-txt font-medium tracking-widest">Phone Call</h4>
-                    <a href="tel:+212600000000" className="text-sm font-semibold text-primary-green hover:underline focus-visible:ring-2 focus-visible:ring-primary-green rounded outline-none">
-                      +212 600 000 000
+                    <a href="tel:+212679675893" className="text-sm font-semibold text-primary-green hover:underline focus-visible:ring-2 focus-visible:ring-primary-green rounded outline-none">
+                      +212 679 675 893
                     </a>
                   </div>
                 </div>
@@ -119,7 +119,7 @@ export default function ContactForm() {
                   <div>
                     <h4 className="text-[10px] uppercase text-light-txt font-medium tracking-widest">Main Office</h4>
                     <p className="text-sm font-semibold text-primary-green">
-                      Jemaa el-Fnaa Square, Marrakesh, Morocco
+                      Marrakech, Morocco
                     </p>
                   </div>
                 </div>

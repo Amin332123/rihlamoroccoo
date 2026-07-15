@@ -6,8 +6,8 @@ import { Settings, Save, Sparkles, CheckCircle2 } from "lucide-react";
 export default function SettingsAdminPage() {
   const [siteName, setSiteName] = useState("Rihla Morocco");
   const [supportEmail, setSupportEmail] = useState("info@rihlamorocco.com");
-  const [supportPhone, setSupportPhone] = useState("+212 600 000 000");
-  const [whatsappLink, setWhatsappLink] = useState("https://wa.me/212600000000");
+  const [supportPhone, setSupportPhone] = useState("+212 679 675 893");
+  const [whatsappLink, setWhatsappLink] = useState("https://wa.me/212679675893");
   const [heroVideo, setHeroVideo] = useState("/videos/hero-bg.mp4");
   const [seoTitle, setSeoTitle] = useState("Luxury Morocco Private Tours & Desert Excursions");
   const [seoDesc, setSeoDesc] = useState("Curate boutique private tour seats across Sahara desert dunes, Fes riads, High Atlas gorges, and Chefchaouen blue streets.");

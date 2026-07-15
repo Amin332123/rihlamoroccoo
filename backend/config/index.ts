@@ -2,8 +2,10 @@ import dotenv from "dotenv";
 
 dotenv.config();
 
+
+
 if (!process.env.DATABASE_URL) {
-  throw new Error("DATABASE_URL environment variable is required for application startup!");
+  throw new Error("DATABASE_URL environment variable is required for application startup! . ");
 }
 
 export const config = {
@@ -24,7 +26,7 @@ export const config = {
   },
   whatsapp: {
     apiUrl: process.env.WHATSAPP_API_URL || "https://api.whatsapp.com/send",
-    agentPhone: process.env.WHATSAPP_AGENT_PHONE || "+212600000000"
+    agentPhone: process.env.WHATSAPP_AGENT_PHONE || "+212679675893"
   },
   cors: {
     origin: process.env.CORS_ALLOWED_ORIGINS || "http://localhost:3000"

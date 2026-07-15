@@ -71,7 +71,7 @@ export default function ReservationSuccess() {
 
         {/* Help text */}
         <p className="text-xs text-light-txt/80 italic font-light max-w-xs mx-auto">
-          Need to change details? Message our travel specialist immediately on WhatsApp at +212 600 000 000.
+          Need to change details? Message our travel specialist immediately on WhatsApp at +212 679 675 893.
         </p>
 
         <div className="h-[1px] bg-sand/20 max-w-xs mx-auto" />

@@ -291,7 +291,7 @@ export default function ExcursionDetails({ excursion, relatedExcursions }: Excur
               <span className="text-[10px] uppercase text-sand tracking-[0.2em] font-semibold">Immediate Assistance</span>
               <p className="text-xs font-light text-white/80">Have questions? Contact our travel expert immediately on WhatsApp.</p>
               <a
-                href="https://wa.me/212600000000"
+                href="https://wa.me/212679675893"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-block px-5 py-2.5 bg-white/10 hover:bg-white/20 border border-white/20 rounded-[14px] text-xs font-semibold uppercase tracking-widest transition-colors duration-300 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 outline-none"

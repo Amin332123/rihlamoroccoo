@@ -97,7 +97,7 @@ export default function Footer() {
           <div className="space-y-3">
             <h4 className="font-serif text-lg text-sand tracking-wide">Get in Touch</h4>
             <p className="text-sm font-light text-white/70">
-              Jemaa el-Fnaa Square, Marrakesh 40000, Morocco
+              Marrakech, Morocco
             </p>
             <p className="text-sm font-light text-white/70">
               Email:{" "}
@@ -107,8 +107,8 @@ export default function Footer() {
             </p>
             <p className="text-sm font-medium text-white">
               WhatsApp:{" "}
-              <a href="https://wa.me/212600000000" target="_blank" rel="noopener noreferrer" className="hover:text-sand underline focus-visible:ring-2 focus-visible:ring-sand focus-visible:ring-offset-2 outline-none rounded">
-                +212 600 000 000
+              <a href="https://wa.me/212679675893" target="_blank" rel="noopener noreferrer" className="hover:text-sand underline focus-visible:ring-2 focus-visible:ring-sand focus-visible:ring-offset-2 outline-none rounded">
+                +212 679 675 893
               </a>
             </p>
           </div>
@@ -116,7 +116,7 @@ export default function Footer() {
           {/* Social Icons */}
           <div className="flex space-x-4">
             <a
-              href="https://wa.me/212600000000"
+              href="https://wa.me/212679675893"
               target="_blank"
               rel="noopener noreferrer"
               className="w-10 h-10 rounded-full border border-sand/20 flex items-center justify-center hover:bg-sand hover:text-primary-green transition-all duration-300 focus-visible:ring-2 focus-visible:ring-sand focus-visible:ring-offset-2 outline-none"

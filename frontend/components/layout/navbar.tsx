@@ -217,10 +217,10 @@ export default function Navbar() {
                   Contact Us
                 </p>
                 <a
-                  href="tel:+212600000000"
+                  href="tel:+212679675893"
                   className="font-serif text-md text-primary-green tracking-wide block"
                 >
-                  +212 600 000 000
+                  +212 679 675 893
                 </a>
               </div>
             </div>
