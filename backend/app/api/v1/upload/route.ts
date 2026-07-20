@@ -38,7 +38,7 @@ export async function POST(request: Request) {
     const buffer = Buffer.from(arrayBuffer);
 
     // Save directory (frontend/public/images)
-    const uploadDir = "/var/www/html/rihlamorocco/frontend/public/images";
+    const uploadDir = process.env.UPLOAD_DIR || join(process.cwd(), "..", "frontend", "public", "images");
     
     // Ensure dir exists
     try {
