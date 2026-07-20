@@ -76,7 +76,7 @@ export default function GalleryAdminPage() {
 
   return (
     <div className="space-y-8">
-      
+
       {/* Header */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
@@ -102,11 +102,10 @@ export default function GalleryAdminPage() {
           <button
             key={cat}
             onClick={() => setActiveCategory(cat)}
-            className={`px-4 py-2 rounded-xl text-[10px] tracking-wider uppercase font-bold border transition-colors cursor-pointer focus-visible:ring-2 focus-visible:ring-primary-green outline-none ${
-              activeCategory === cat
+            className={`px-4 py-2 rounded-xl text-[10px] tracking-wider uppercase font-bold border transition-colors cursor-pointer focus-visible:ring-2 focus-visible:ring-primary-green outline-none ${activeCategory === cat
                 ? "bg-primary-green border-primary-green text-white"
                 : "bg-white border-sand/20 text-light-txt hover:border-primary-green/30"
-            }`}
+              }`}
           >
             {cat}
           </button>
@@ -125,7 +124,7 @@ export default function GalleryAdminPage() {
       {/* Media grid cards */}
       {!isLoading && (
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-          
+
           {/* Upload Trigger Card */}
           <div
             onClick={() => setIsUploadOpen(true)}
@@ -146,7 +145,7 @@ export default function GalleryAdminPage() {
               className="aspect-square rounded-[22px] border border-sand/20 overflow-hidden relative group bg-white shadow-sm"
             >
               <img src={img.image} alt={img.title} className="w-full h-full object-cover group-hover:scale-103 transition-transform duration-700 ease-out" />
-              
+
               {/* Top status tags */}
               <div className="absolute top-3.5 left-3.5 right-3.5 flex justify-between items-center pointer-events-none">
                 <span className="px-2 py-1 bg-white/90 backdrop-blur-sm border border-sand/15 text-[8px] uppercase tracking-wider font-bold rounded-lg text-primary-green">
@@ -166,11 +165,10 @@ export default function GalleryAdminPage() {
                   <div className="flex gap-2 justify-end">
                     <button
                       onClick={() => handleToggleFeatured(img.id, img.featured)}
-                      className={`px-3 py-1.5 rounded-lg text-[9px] font-bold uppercase tracking-wider border transition-colors cursor-pointer ${
-                        img.featured
+                      className={`px-3 py-1.5 rounded-lg text-[9px] font-bold uppercase tracking-wider border transition-colors cursor-pointer ${img.featured
                           ? "bg-primary-green border-primary-green text-white"
                           : "bg-white border-white/20 text-dark-txt hover:bg-sand"
-                      }`}
+                        }`}
                     >
                       {img.featured ? "Unfeature" : "Feature"}
                     </button>
