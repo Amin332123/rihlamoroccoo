@@ -426,11 +426,11 @@ export default function ExcursionEditor({ initialData }: ExcursionEditorProps) {
                   {galleryImages.map((img, idx) => (
                     <div key={idx} className="relative group rounded-xl overflow-hidden border border-sand/20 bg-cream-bg aspect-video shadow-sm">
                       <img src={img} alt={`Gallery ${idx + 1}`} className="w-full h-full object-cover" />
-                      {/* Hover X remove button */}
+                      {/* Remove button */}
                       <button
                         type="button"
                         onClick={() => setGalleryImages(galleryImages.filter((_, i) => i !== idx))}
-                        className="absolute top-2 right-2 bg-black/60 hover:bg-red-600 text-white rounded-full p-1 transition-all shadow-md opacity-0 group-hover:opacity-100 cursor-pointer focus:outline-none"
+                        className="absolute top-2 right-2 bg-black/60 hover:bg-red-600 text-white rounded-full p-1 transition-all shadow-md cursor-pointer focus:outline-none"
                         title="Remove image"
                       >
                         <X className="w-3.5 h-3.5" />

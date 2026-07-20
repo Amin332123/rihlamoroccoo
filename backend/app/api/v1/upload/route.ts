@@ -39,29 +39,48 @@ export async function POST(request: Request) {
 
     // Save directory (frontend/public/images)
     const uploadDir = process.env.UPLOAD_DIR || join(process.cwd(), "..", "frontend", "public", "images");
-    
-    // Ensure dir exists
+    let isSavedLocal = false;
+    let filename = "";
+
     try {
+      // Ensure dir exists
       mkdirSync(uploadDir, { recursive: true });
-    } catch (e) {}
+      
+      // Generate secure filename
+      const fileExtension = file.name.split(".").pop() || "jpg";
+      filename = `${randomUUID()}.${fileExtension}`;
+      const filePath = join(uploadDir, filename);
 
-    // Generate secure filename
-    const fileExtension = file.name.split(".").pop() || "jpg";
-    const filename = `${randomUUID()}.${fileExtension}`;
-    const filePath = join(uploadDir, filename);
+      // Write file
+      writeFileSync(filePath, buffer);
+      isSavedLocal = true;
+    } catch (writeError: any) {
+      console.warn("Local filesystem write failed, falling back to base64 encoding. Error:", writeError);
+    }
 
-    // Write file
-    writeFileSync(filePath, buffer);
-
-    // Return the image URL path relative to the frontend public root
-    return handleCors(
-      NextResponse.json({
-        success: true,
-        data: {
-          url: `/images/${filename}`
-        }
-      })
-    );
+    if (isSavedLocal) {
+      // Return the image URL path relative to the frontend public root
+      return handleCors(
+        NextResponse.json({
+          success: true,
+          data: {
+            url: `/images/${filename}`
+          }
+        })
+      );
+    } else {
+      // Fallback: Base64 data URL
+      const base64Data = buffer.toString("base64");
+      const dataUrl = `data:${file.type};base64,${base64Data}`;
+      return handleCors(
+        NextResponse.json({
+          success: true,
+          data: {
+            url: dataUrl
+          }
+        })
+      );
+    }
   } catch (error: any) {
     console.error("Upload error:", error);
     return handleCors(
